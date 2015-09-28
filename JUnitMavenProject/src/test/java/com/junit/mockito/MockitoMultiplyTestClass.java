@@ -8,6 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 
+//Comments
+
 public class MockitoMultiplyTestClass {
 
 	
