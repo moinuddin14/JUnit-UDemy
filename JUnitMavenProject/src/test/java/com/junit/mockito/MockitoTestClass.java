@@ -6,6 +6,8 @@ import org.mockito.Mock;
 import static org.mockito.Mockito.*;
 public class MockitoTestClass {
 
+	
+	//Comments
 	Calculator cal;
 	
 	@Before
