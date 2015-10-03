@@ -1,6 +1,8 @@
 package com.junit.personal.testing;
 
 import org.junit.rules.TestRule;
+import org.junit.rules.TestWatcher;
+import org.junit.rules.Verifier;
 import org.junit.runner.Runner;
 import org.junit.runners.BlockJUnit4ClassRunner;
 import org.reflections.Reflections;
@@ -10,7 +12,7 @@ import java.util.Set;
 
 public class ScannotationsClass {
 
-	public static Reflections reflections;
+	public static Reflections reflections; 
 	
 	public static void main(String[] args) {
 		 
@@ -60,9 +62,9 @@ public class ScannotationsClass {
 		System.out.println(subTypesofRunner);*/
 		
 		reflections = new Reflections("org.junit, org.junit.experimental","org.junit.experimental.categories", "org.junit.experimental.max", "org.junit.experimental.results","org.junit.experimental.runners", "org.junit.experimental.theories", "org.junit.experimental.theories.suppliers","org.junit.matchers", "org.junit.rules", "org.junit.runner", "org.junit.runner.manipulation", "org.junit.runner.notification","org.junit.runners", "org.junit.runners.model", "org.junit.runners.parameterized", "org.junit.validator");
-		Set<Class <? extends BlockJUnit4ClassRunner>> subTypesOfBlockJUnit4ClassRunner = reflections.getSubTypesOf(BlockJUnit4ClassRunner.class);
+		Set<Class <? extends TestWatcher>> subTypesOfTestWatcher = reflections.getSubTypesOf(TestWatcher.class);
 		
-		System.out.println(subTypesOfBlockJUnit4ClassRunner);
+		System.out.println(subTypesOfTestWatcher);
 	}
 
 }

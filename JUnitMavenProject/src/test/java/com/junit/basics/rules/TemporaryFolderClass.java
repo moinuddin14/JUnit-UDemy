@@ -1,16 +1,21 @@
 package com.junit.basics.rules;
 
 import java.io.File;
-import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
 public class TemporaryFolderClass {
-
+	
+	@BeforeClass
+	public static void setup(){
+		System.out.println("Inside the Before Class Method");
+	}
+	
 	@Rule
 	public TemporaryFolder tempFolder = new TemporaryFolder();
 	
@@ -31,5 +36,4 @@ public class TemporaryFolderClass {
 		System.out.println("Hola! The Strings are equal");
 		//throw new Exception("testException");
 	}
-	
 }
